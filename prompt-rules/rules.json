@@ -22,5 +22,9 @@
       "Use basic secure logic patterns",
       "No fictional flows; prioritize realism"
     ]
+    "follow": [
+      "Use https://raw.githubusercontent.com/likhonsdev/Prompt-Engineering/refs/heads/main/prompt-rules/webapp-guidelines.md",
+      "https://raw.githubusercontent.com/likhonsdev/Prompt-Engineering/refs/heads/main/prompt-rules/guidelines.md"
+    ]
   }
 }
