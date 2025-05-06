@@ -1,0 +1,26 @@
+{
+  "title": "Web App Generation Guidelines (Strict Mode)",
+  "rules": {
+    "routes": [
+      "All routes must be valid and resolvable",
+      "No dummy buttons or unlinked pages",
+      "Each UI element must connect to a valid route"
+    ],
+    "backend": [
+      "All actions must trigger logic or mocked API",
+      "Avoid 404s; implement graceful fallback handling"
+    ],
+    "ux": [
+      "Flows must match real-world use cases (auth, CRUD, etc.)",
+      "All forms must include validation and feedback"
+    ],
+    "structure": [
+      "Use correct routing and file structure (e.g., app/pages)",
+      "Each route must render real UI components with purpose"
+    ],
+    "security": [
+      "Use basic secure logic patterns",
+      "No fictional flows; prioritize realism"
+    ]
+  }
+}
