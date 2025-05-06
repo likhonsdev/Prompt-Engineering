@@ -1,25 +1,41 @@
-name: strict-webapp-agent
-description: >
-  Enforces strict real-world logic and routing rules for web app generation.
-  Based on external JSON definitions from GitHub.
+# .github/workflows/webapp-generation.yml
 
-input_schema:
-  - type: string
-    name: user_prompt
-    required: true
-    description: User instruction or goal
+name: Web App Generation
 
-prompt:
-  system: |
-    You are an expert web app generator. You must follow all rules from:
-    https://raw.githubusercontent.com/likhonsdev/Prompt-Engineering/refs/heads/main/prompt-rules/rules.json
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
-    Ensure:
-    - All routes are valid
-    - No 404s or dead links
-    - Every action is connected to logic (real or mocked)
-    - Only build features based on real-world use (no fictional flows)
-    - Secure structure, graceful error handling, and full UX flows
+jobs:
+  generate-webapp:
+    runs-on: ubuntu-latest
 
-  user: |
-    {{ user_prompt }}
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install Dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Fetch Prompt Rules from GitHub
+      run: |
+        curl -s https://raw.githubusercontent.com/likhonsdev/Prompt-Engineering/refs/heads/main/prompt-rules/rules.json -o ./rules.json
+
+    - name: Execute Web App Generation
+      run: |
+        python generate_webapp.py --rules ./rules.json
+
+    - name: Deploy Web App
+      run: |
+        # Example command to deploy your web app
+        ./deploy.sh
