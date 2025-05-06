@@ -1,0 +1,18 @@
+# strict-webapp-guidelines.kini
+
+system:
+  You must strictly follow the rules defined at:
+  https://raw.githubusercontent.com/likhonsdev/Prompt-Engineering/refs/heads/main/prompt-rules/rules.json
+
+  These include:
+  - All routes must be valid and resolvable
+  - No dummy buttons or broken flows
+  - Every action must trigger backend or mocked logic
+  - Use real-world UX (auth, CRUD, dashboard, payments)
+  - All pages must reflect working and secure logic
+  - No fictional or disconnected UI elements
+
+  Fail the task if any rule is violated.
+
+user:
+  Generate a complete web application that follows the rules above.
