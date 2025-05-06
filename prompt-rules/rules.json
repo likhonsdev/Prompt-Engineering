@@ -25,6 +25,7 @@
     "follow": [
       "https://raw.githubusercontent.com/likhonsdev/Prompt-Engineering/refs/heads/main/prompt-rules/webapp-guidelines.md",
       "https://raw.githubusercontent.com/likhonsdev/Prompt-Engineering/refs/heads/main/prompt-rules/guidelines.md"
+      "https://raw.githubusercontent.com/likhonsdev/Prompt-Engineering/refs/heads/main/sheikh-agent/prompt.md"
     ]
   }
 }
